@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8CD84" />
+      <stop offset="50%" stop-color="#C9A961" />
+      <stop offset="100%" stop-color="#A68740" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Emblem (Left) -->
+  <g transform="translate(6, 12)">
+    <circle cx="28" cy="28" r="26" fill="#12241B" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="28" cy="28" r="21" fill="none" stroke="#C9A961" stroke-width="0.75" stroke-dasharray="3,2"/>
+    <!-- Lotus / Makhana seed pod motif -->
+    <path d="M28 12 C 34 20, 42 26, 42 34 C 42 42, 36 46, 28 46 C 20 46, 14 42, 14 34 C 14 26, 22 20, 28 12 Z" fill="url(#goldGrad)" opacity="0.9"/>
+    <circle cx="28" cy="28" r="4" fill="#0B1610"/>
+  </g>
+
+  <!-- Brand Typography (Right) -->
+  <g transform="translate(72, 34)">
+    <text x="0" y="0" font-family="serif" font-size="22" font-weight="bold" fill="#FFFFFF" letter-spacing="4.5">MAKRAHAM</text>
+    <text x="1" y="16" font-family="sans-serif" font-size="8.5" font-weight="bold" fill="#C9A961" letter-spacing="3.2">PREMIUM RAW MAKHANA</text>
+  </g>
+</svg>

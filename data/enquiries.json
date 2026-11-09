@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1792503110701",
+    "timestamp": "2026-10-20T13:31:50.701Z",
+    "fullName": "Test Buyer",
+    "companyName": "",
+    "email": "test@example.com",
+    "phone": "+919876543210",
+    "inquiry": "B2B Wholesale / Export RFQ",
+    "grade": "",
+    "port": "",
+    "message": "Testing RFQ",
+    "sourcePage": "Website",
+    "ip": "127.0.0.1"
+  },
+  {
+    "id": "1792485321200",
+    "timestamp": "2026-10-20T08:35:21.200Z",
+    "fullName": "Test",
+    "companyName": "",
+    "email": "test@example.com",
+    "phone": "1234567890",
+    "inquiry": "B2B Wholesale / Export RFQ",
+    "grade": "",
+    "port": "",
+    "message": "Test message",
+    "sourcePage": "Website",
+    "ip": "127.0.0.1"
+  }
+]

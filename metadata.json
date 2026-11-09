@@ -1,0 +1,8 @@
+{
+  "name": "Makhanam | The Finest Makhana from Mithila",
+  "description": "MAKHANAM brings single-origin, hand-harvested GI-tagged makhana from the sacred wetlands of Bihar, elevated with artisanal botanicals and ancient roasting techniques.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

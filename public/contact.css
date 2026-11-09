@@ -1,0 +1,236 @@
+/* ==========================================================================
+   MAKHANAM - LUXURY B2B EXPORT CONTACT STYLESHEET
+   ========================================================================== */
+
+:root {
+    --charcoal: #0B1610;
+    --dark: #12241B;
+    --cocoa: #2A4234;
+    --earth: #385A48;
+    --terracotta: #C37A58;
+    --gold: #C9A961;
+    --gold-bright: #E8CD84;
+    --cream: #F1F6F2;
+    --ivory: #FAFCFA;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--dark);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: rgba(201,169,97,.25);
+    color: var(--dark);
+}
+
+/* Unified Luxury Brand Scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #C9A961 #0B1610;
+}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0B1610; }
+::-webkit-scrollbar-thumb {
+    background: #C9A961;
+    border-radius: 10px;
+    border: 1px solid rgba(11, 22, 16, 0.4);
+    transition: background-color 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover { background: #E8CD84; }
+::-webkit-scrollbar-thumb:active { background: #C37A58; }
+::-webkit-scrollbar-corner { background: #0B1610; }
+
+.hero-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(23,17,13,.30) 0%,
+        rgba(23,17,13,.38) 35%,
+        rgba(23,17,13,.82) 100%
+    );
+}
+
+.hero-vignette {
+    background: radial-gradient(
+        circle at center,
+        transparent 20%,
+        rgba(23,17,13,.38) 100%
+    );
+}
+
+.text-gold-gradient {
+    background: linear-gradient(110deg, var(--cream), var(--gold), var(--gold-bright));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.glass-dark {
+    background: rgba(36,28,23,.88);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(201,169,97,.22);
+}
+
+.glass-light {
+    background: rgba(252,249,242,.92);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    border: 1px solid rgba(92,66,50,.14);
+}
+
+.btn-shimmer {
+    background: linear-gradient(110deg, var(--gold), var(--gold-bright), var(--gold));
+    background-size: 200% 100%;
+    transition: .35s ease;
+}
+
+.btn-shimmer:hover {
+    background-position: 100% 0;
+    box-shadow: 0 12px 30px rgba(201,169,97,.20);
+    transform: translateY(-1px);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .9s cubic-bezier(.16,1,.3,1),
+                transform .9s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-input {
+    width: 100%;
+    min-height: 52px;
+    border-radius: 12px;
+    border: 1px solid rgba(92,66,50,.18);
+    background: rgba(255,255,255,.72);
+    color: var(--dark);
+    padding: 14px 16px;
+    outline: none;
+    transition: .25s ease;
+    font: inherit;
+}
+
+.contact-input:focus {
+    border-color: rgba(201,169,97,.8);
+    box-shadow: 0 0 0 4px rgba(201,169,97,.10);
+    background: #fff;
+}
+
+textarea.contact-input {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-card {
+    border: 1px solid rgba(92,66,50,.13);
+    background: rgba(252,249,242,.82);
+    transition: .3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201,169,97,.42);
+    box-shadow: 0 16px 35px rgba(36,28,23,.07);
+}
+
+.premium-visual {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    background: var(--dark);
+}
+
+.premium-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(23,17,13,.88) 0%, rgba(23,17,13,.48) 42%, rgba(23,17,13,.18) 100%),
+        linear-gradient(to top, rgba(23,17,13,.65), transparent 52%);
+    pointer-events: none;
+}
+
+.premium-visual img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transform: scale(1.10);
+    transition: transform 1.5s cubic-bezier(.16,1,.3,1), filter 1.2s ease;
+    filter: saturate(.88) contrast(1.04);
+}
+
+.premium-visual.is-visible img {
+    transform: scale(1.02);
+    filter: saturate(1) contrast(1.02);
+}
+
+.premium-visual-content {
+    position: relative;
+    z-index: 2;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.premium-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 11%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(201,169,97,.55), transparent);
+    z-index: 2;
+}
+
+@media (max-width: 640px) {
+    .glass-dark,
+    .glass-light {
+        backdrop-filter: blur(12px) saturate(130%);
+        -webkit-backdrop-filter: blur(12px) saturate(130%);
+    }
+
+    .tap-target {
+        min-height: 44px;
+    }
+
+    .contact-input {
+        min-height: 50px;
+        font-size: 14px;
+    }
+}
+
+/* Spectral Typography Utilities */
+.spectral-extralight { font-family: "Spectral", serif; font-weight: 200; font-style: normal; }
+.spectral-light { font-family: "Spectral", serif; font-weight: 300; font-style: normal; }
+.spectral-regular { font-family: "Spectral", serif; font-weight: 400; font-style: normal; }
+.spectral-medium { font-family: "Spectral", serif; font-weight: 500; font-style: normal; }
+.spectral-semibold { font-family: "Spectral", serif; font-weight: 600; font-style: normal; }
+.spectral-bold { font-family: "Spectral", serif; font-weight: 700; font-style: normal; }
+.spectral-extrabold { font-family: "Spectral", serif; font-weight: 800; font-style: normal; }
+.spectral-extralight-italic { font-family: "Spectral", serif; font-weight: 200; font-style: italic; }
+.spectral-light-italic { font-family: "Spectral", serif; font-weight: 300; font-style: italic; }
+.spectral-regular-italic { font-family: "Spectral", serif; font-weight: 400; font-style: italic; }
+.spectral-medium-italic { font-family: "Spectral", serif; font-weight: 500; font-style: italic; }
+.spectral-semibold-italic { font-family: "Spectral", serif; font-weight: 600; font-style: italic; }
+.spectral-bold-italic { font-family: "Spectral", serif; font-weight: 700; font-style: italic; }
+.spectral-extrabold-italic { font-family: "Spectral", serif; font-weight: 800; font-style: italic; }
+
+.bricolage-grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}

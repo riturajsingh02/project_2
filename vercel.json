@@ -1,0 +1,208 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|gif|svg|webp|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(mp4|webm)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(css|js)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/grading",
+      "destination": "/grading.html"
+    },
+    {
+      "source": "/grading.html",
+      "destination": "/grading.html"
+    },
+    {
+      "source": "/sizecaliperguide",
+      "destination": "/grading.html"
+    },
+    {
+      "source": "/sizecaliperguide.html",
+      "destination": "/grading.html"
+    },
+    {
+      "source": "/sizecalliperguide",
+      "destination": "/grading.html"
+    },
+    {
+      "source": "/aboutus",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/aboutus.html",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/about-us",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/makhanam",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/makhanam.html",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/sizeguide",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/sizeguide.html",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/about-makhana",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/about-makhanam",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/why",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/why.html",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/why-makhanam",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/journey",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/journey.html",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/ourstory",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/ourstory.html",
+      "destination": "/why.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contactus.html"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contactus.html"
+    },
+    {
+      "source": "/contactus",
+      "destination": "/contactus.html"
+    },
+    {
+      "source": "/contactus.html",
+      "destination": "/contactus.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/refund",
+      "destination": "/refund.html"
+    },
+    {
+      "source": "/refund.html",
+      "destination": "/refund.html"
+    },
+    {
+      "source": "/contactinfo",
+      "destination": "/contactinfo.html"
+    },
+    {
+      "source": "/contactinfo.html",
+      "destination": "/contactinfo.html"
+    },
+    {
+      "source": "/contact-info",
+      "destination": "/contactinfo.html"
+    },
+    {
+      "source": "/shipping",
+      "destination": "/shipping.html"
+    },
+    {
+      "source": "/shipping.html",
+      "destination": "/shipping.html"
+    },
+    {
+      "source": "/shipping-policy",
+      "destination": "/shipping.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms.html"
+    }
+  ]
+}
