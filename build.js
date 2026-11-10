@@ -99,7 +99,8 @@ const aliases = [
   ['logo_makhana.png', 'favicon.ico'],
   ['logo_makhana.png', 'favicon.png'],
   ['logo_makhana_og.jpg', 'logo_makhana_og.jpg'],
-  ['logo_makhana_og.png', 'logo_makhana_og.png']
+  ['logo_makhana_og.png', 'logo_makhana_og.png'],
+  ['logo_makhana_raw.png', 'logo_makhana_raw.png']
 ];
 
 for (const [src, dest] of aliases) {
