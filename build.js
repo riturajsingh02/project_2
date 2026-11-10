@@ -95,7 +95,9 @@ const aliases = [
   ['WhatsApp Image 2026-09-24 at 8.30.27 AM.jpeg', 'whatsapp_makhana_2.jpeg'],
   ['mobile hero.jpeg', 'mobile-hero.jpeg'],
   ['ceo_makhana.jpg', 'ceo_makhana.jpeg'],
-  ['images/mk.mp4', 'mk.mp4']
+  ['images/mk.mp4', 'mk.mp4'],
+  ['logo_makhana.png', 'favicon.ico'],
+  ['logo_makhana.png', 'favicon.png']
 ];
 
 for (const [src, dest] of aliases) {
