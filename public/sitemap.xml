@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ais-dev-wsgzl4pgq7piollwhzxrwe-944085633882.asia-east1.run.app/</loc>
+    <loc>https://makhanamm.com/</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ais-dev-wsgzl4pgq7piollwhzxrwe-944085633882.asia-east1.run.app/aboutus.html</loc>
+    <loc>https://makhanamm.com/grading</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://ais-dev-wsgzl4pgq7piollwhzxrwe-944085633882.asia-east1.run.app/about.html</loc>
+    <loc>https://makhanamm.com/why</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://ais-dev-wsgzl4pgq7piollwhzxrwe-944085633882.asia-east1.run.app/why.html</loc>
+    <loc>https://makhanamm.com/aboutus</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://ais-dev-wsgzl4pgq7piollwhzxrwe-944085633882.asia-east1.run.app/grading.html</loc>
+    <loc>https://makhanamm.com/contactus</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://ais-dev-wsgzl4pgq7piollwhzxrwe-944085633882.asia-east1.run.app/contactus.html</loc>
+    <loc>https://makhanamm.com/about</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://makhanamm.com/privacy</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://makhanamm.com/refund</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://makhanamm.com/shipping</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://makhanamm.com/terms</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://makhanamm.com/contactinfo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
   </url>
 </urlset>

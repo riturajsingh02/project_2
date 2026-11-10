@@ -97,13 +97,15 @@ const aliases = [
   ['ceo_makhana.jpg', 'ceo_makhana.jpeg'],
   ['images/mk.mp4', 'mk.mp4'],
   ['logo_makhana.png', 'favicon.ico'],
-  ['logo_makhana.png', 'favicon.png']
+  ['logo_makhana.png', 'favicon.png'],
+  ['logo_makhana_og.jpg', 'logo_makhana_og.jpg'],
+  ['logo_makhana_og.png', 'logo_makhana_og.png']
 ];
 
 for (const [src, dest] of aliases) {
   const srcPath = path.join(__dirname, src);
   const destPath = path.join(publicDir, dest);
-  if (fs.existsSync(srcPath) && !fs.existsSync(destPath)) {
+  if (fs.existsSync(srcPath)) {
     fs.copyFileSync(srcPath, destPath);
   }
 }

@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#241C17">
-    <title>About Makhanam | Premium Raw Makhana Processing & Supply</title>
-    <meta name="description" content="Discover Makhanam — rooted in Bihar, dedicated to premium raw Makhana processing, precision grading, and dependable B2B wholesale supply worldwide.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo_makhana.png">
+    <link rel="shortcut icon" href="logo_makhana.png">
+    <link rel="apple-touch-icon" href="logo_makhana.png">
+
+    <title>Makhana Processing & Nutritional Science | MAKHANAM Bihar</title>
+    <meta name="description" content="Discover the step-by-step process of traditional Mithila Makhana harvesting, sun-curing, cast-iron roasting, popping, and nutritional benefits at MAKHANAM.">
+    <meta name="keywords" content="makhana processing, how makhana is made, makhana nutrition, makhana benefits, lotus seeds bihar, raw makhana">
+    <link rel="canonical" href="https://makhanamm.com/about">
+
+    <!-- OpenGraph & Twitter Meta Tags -->
+    <meta property="og:site_name" content="MAKHANAM">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://makhanamm.com/about">
+    <meta property="og:title" content="Makhana Processing & Nutritional Science | MAKHANAM Bihar">
+    <meta property="og:description" content="Discover the step-by-step process of traditional Mithila Makhana harvesting, sun-curing, cast-iron roasting, popping, and nutritional benefits.">
+    <meta property="og:image" content="https://makhanamm.com/logo_makhana_og.jpg">
+    <meta property="og:image:secure_url" content="https://makhanamm.com/logo_makhana_og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Makhana Processing & Nutrition">
+    <meta property="og:image" content="https://makhanamm.com/logo_makhana.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Makhana Processing & Nutritional Science | MAKHANAM Bihar">
+    <meta name="twitter:description" content="Discover traditional Mithila Makhana harvesting, sun-curing, cast-iron roasting, and nutritional benefits.">
+    <meta name="twitter:image" content="https://makhanamm.com/logo_makhana_og.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Makhana Processing & Nutritional Science",
+      "description": "Scientific nutritional profile and traditional artisanal popping process of Mithila Makhana (Fox Nuts).",
+      "author": {
+        "@type": "Organization",
+        "name": "MAKHANAM"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MAKHANAM",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://makhanamm.com/logo_makhana.png"
+        }
+      },
+      "mainEntityOfPage": "https://makhanamm.com/about"
+    }
+    </script>
 
     <!-- Brand Typography: Spectral & Bricolage Grotesque -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1049,11 +1098,27 @@
                             </div>
                         </div>
 
-                        <!-- Vertical Video Element (Continuous Autoplay, No Play/Pause Options) -->
-                        <video id="aboutDocVideo" class="cinematic-video-el" playsinline loop poster="main.jpeg" preload="auto" muted autoplay>
+                        <!-- Vertical Video Element (Continuous Autoplay, Tap Anywhere to Play/Pause) -->
+                        <video id="aboutDocVideo" class="cinematic-video-el" playsinline webkit-playsinline loop poster="main.jpeg" preload="auto" muted autoplay>
                             <source src="images/mk.mp4" type="video/mp4">
+                            <source src="/images/mk.mp4" type="video/mp4">
+                            <source src="mk.mp4" type="video/mp4">
+                            <source src="/mk.mp4" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
+
+                        <!-- Central Play/Pause Watermark Overlay -->
+                        <div id="videoCenterPlayWrapper" class="absolute inset-0 z-10 flex items-center justify-center transition-all duration-300 pointer-events-none" style="opacity: 1;">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#12241B]/85 border-2 border-[#E8CD84] text-[#E8CD84] flex items-center justify-center text-xl sm:text-2xl shadow-2xl backdrop-blur-md transition-transform duration-300">
+                                <i class="fa-solid fa-play ml-1" id="centerPlayIcon"></i>
+                            </div>
+                        </div>
+
+                        <!-- Audio/Playback Floating Overlay Button -->
+                        <button id="videoPlayToggleBtn" class="absolute bottom-4 right-4 z-20 px-3 py-1.5 rounded-full bg-[#12241B]/90 hover:bg-[#12241B] border border-[#C9A961]/70 text-[#E8CD84] flex items-center gap-2 text-xs font-mono shadow-xl transition-all active:scale-95 cursor-pointer backdrop-blur-md" aria-label="Toggle Sound">
+                            <i class="fa-solid fa-volume-xmark" id="videoAudioIcon"></i>
+                            <span id="videoAudioLabel">Unmute</span>
+                        </button>
                     </div>
 
                     <!-- Right: Editorial Narrative & Process Breakdown -->
@@ -1375,41 +1440,107 @@
         }, 250);
 
         // ======================================================================
-        // CINEMATIC VERTICAL VIDEO CONTINUOUS AUTOPLAY
+        // CINEMATIC VERTICAL VIDEO AUTOPLAY & INTERACTION
         // ======================================================================
         const docVideo = document.getElementById('aboutDocVideo');
         const videoFrame = document.getElementById('videoFrame');
+        const videoToggleBtn = document.getElementById('videoPlayToggleBtn');
+        const videoAudioIcon = document.getElementById('videoAudioIcon');
+        const videoAudioLabel = document.getElementById('videoAudioLabel');
+        const centerPlayWrapper = document.getElementById('videoCenterPlayWrapper');
+        const centerPlayIcon = document.getElementById('centerPlayIcon');
 
         if (docVideo) {
+            const updatePlayState = () => {
+                if (!docVideo.paused) {
+                    if (centerPlayWrapper) centerPlayWrapper.style.opacity = '0';
+                } else {
+                    if (centerPlayWrapper) {
+                        centerPlayWrapper.style.opacity = '1';
+                        if (centerPlayIcon) centerPlayIcon.className = 'fa-solid fa-play ml-1';
+                    }
+                }
+            };
+
+            docVideo.addEventListener('play', updatePlayState);
+            docVideo.addEventListener('playing', updatePlayState);
+            docVideo.addEventListener('pause', updatePlayState);
+
+            // Safe muted autoplay
             const playVideoMuted = () => {
                 docVideo.muted = true;
                 const promise = docVideo.play();
                 if (promise !== undefined) {
-                    promise.catch(() => {
-                        // If browser blocks immediate autoplay, start upon first interaction anywhere
+                    promise.then(() => {
+                        updatePlayState();
+                    }).catch(() => {
+                        updatePlayState();
                         const startOnGesture = () => {
-                            docVideo.play().catch(() => {});
+                            docVideo.play().then(() => updatePlayState()).catch(() => {});
                             document.removeEventListener('touchstart', startOnGesture);
                             document.removeEventListener('click', startOnGesture);
                         };
-                        document.addEventListener('touchstart', startOnGesture, { passive: true });
-                        document.addEventListener('click', startOnGesture, { passive: true });
+                        document.addEventListener('touchstart', startOnGesture, { passive: true, once: true });
+                        document.addEventListener('click', startOnGesture, { passive: true, once: true });
                     });
                 }
             };
 
+            // Attempt playback immediately and after slight delay
             playVideoMuted();
+            setTimeout(playVideoMuted, 500);
 
-            // Auto-play muted video smoothly when section scrolls into viewport
+            // Audio button click
+            if (videoToggleBtn) {
+                videoToggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (docVideo.paused) {
+                        docVideo.play().then(() => updatePlayState()).catch(() => {});
+                    }
+                    docVideo.muted = !docVideo.muted;
+                    if (docVideo.muted) {
+                        if (videoAudioIcon) videoAudioIcon.className = 'fa-solid fa-volume-xmark';
+                        if (videoAudioLabel) videoAudioLabel.textContent = 'Unmute';
+                    } else {
+                        if (videoAudioIcon) videoAudioIcon.className = 'fa-solid fa-volume-high';
+                        if (videoAudioLabel) videoAudioLabel.textContent = 'Mute';
+                    }
+                });
+            }
+
+            // Click anywhere on video frame to toggle playback
+            if (videoFrame) {
+                videoFrame.addEventListener('click', (e) => {
+                    if (e.target.closest('#videoPlayToggleBtn')) return;
+                    if (docVideo.paused) {
+                        docVideo.play().then(() => updatePlayState()).catch(() => {});
+                    } else {
+                        docVideo.pause();
+                        updatePlayState();
+                    }
+                });
+            }
+
+            // Auto-play when scrolled into viewport
             const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && docVideo.paused) {
-                        docVideo.play().catch(() => {});
+                        docVideo.play().then(() => updatePlayState()).catch(() => {});
                     }
                 });
             }, { threshold: 0.15 });
 
             videoObserver.observe(videoFrame || docVideo);
+
+            // Robust error fallback
+            docVideo.addEventListener('error', function(e) {
+                console.warn('Video stream error on primary source, falling back to /mk.mp4');
+                if (docVideo.src !== 'mk.mp4') {
+                    docVideo.src = 'mk.mp4';
+                    docVideo.load();
+                    docVideo.play().catch(() => {});
+                }
+            }, true);
         }
 
         // ======================================================================
